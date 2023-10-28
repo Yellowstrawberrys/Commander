@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'xyz.yellowstrawberry'
+version = '1.0.0-SNAPSHOT'
+description = 'Makes Minecraft command more developer-friendly.'
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/groups/public/"
+    }
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "roin"
+            url = "https://repo.roinz.xyz/snapshots"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            pom {
+                name = 'Commander'
+                description = 'Makes Minecraft command more developer-friendly.'
+                licenses {
+                    license {
+                        name = 'The Apache License'
+                        url = 'https://raw.githubusercontent.com/TheMiniLuca/Commander/main/LICENCE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'Yellowstrawberrys'
+                        name = 'Yellowstrawberry'
+                        email = 'eunsoo3009@hotmail.com'
+                    }
+                }
+            }
+            from(components.java)
+        }
+    }
+}
