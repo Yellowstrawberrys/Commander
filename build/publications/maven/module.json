@@ -3,7 +3,7 @@
   "component": {
     "group": "xyz.yellowstrawberry",
     "module": "Commander",
-    "version": "1.0.0-SNAPSHOT",
+    "version": "1.0.1-SNAPSHOT",
     "attributes": {
       "org.gradle.status": "integration"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "Commander-1.0.0-SNAPSHOT.jar",
-          "url": "Commander-1.0.0-SNAPSHOT.jar",
-          "size": 12280,
-          "sha512": "873ac594cf5468c9dab509b6351cd1bb37ce17f47d76201693e6e01fafddc6de594d3e75fb26d057c8192cb4a949421cc2f8e573338d30a377909e883879dbd1",
-          "sha256": "2c1469f0d164398fcc86cfa766f92f58c7ddbd957a4d389b9b9c4be18095e863",
-          "sha1": "2f9b54f586aff8f37edcf1218035b5386e2194da",
-          "md5": "fcc600f16db1f8d67183ce95321ae938"
+          "name": "Commander-1.0.1-SNAPSHOT.jar",
+          "url": "Commander-1.0.1-SNAPSHOT.jar",
+          "size": 12275,
+          "sha512": "bdf88e770cfe4845740fa5d2738957a9097d83dda11deec52d2242b68794a8d385d71a02e8dcca5f5116d8a3b1385a378c286ae1ea4dd99a472d4e0a92267d48",
+          "sha256": "de0bf30b86661130ff919b29d5422b29fb910b66137575d5cc6b1627a62a6b97",
+          "sha1": "3c587b688cc1a00f14068e37c4ecff6da8d20a40",
+          "md5": "dbdf88ab951834187f1f67d96932818b"
         }
       ]
     },
@@ -46,13 +46,13 @@
       },
       "files": [
         {
-          "name": "Commander-1.0.0-SNAPSHOT.jar",
-          "url": "Commander-1.0.0-SNAPSHOT.jar",
-          "size": 12280,
-          "sha512": "873ac594cf5468c9dab509b6351cd1bb37ce17f47d76201693e6e01fafddc6de594d3e75fb26d057c8192cb4a949421cc2f8e573338d30a377909e883879dbd1",
-          "sha256": "2c1469f0d164398fcc86cfa766f92f58c7ddbd957a4d389b9b9c4be18095e863",
-          "sha1": "2f9b54f586aff8f37edcf1218035b5386e2194da",
-          "md5": "fcc600f16db1f8d67183ce95321ae938"
+          "name": "Commander-1.0.1-SNAPSHOT.jar",
+          "url": "Commander-1.0.1-SNAPSHOT.jar",
+          "size": 12275,
+          "sha512": "bdf88e770cfe4845740fa5d2738957a9097d83dda11deec52d2242b68794a8d385d71a02e8dcca5f5116d8a3b1385a378c286ae1ea4dd99a472d4e0a92267d48",
+          "sha256": "de0bf30b86661130ff919b29d5422b29fb910b66137575d5cc6b1627a62a6b97",
+          "sha1": "3c587b688cc1a00f14068e37c4ecff6da8d20a40",
+          "md5": "dbdf88ab951834187f1f67d96932818b"
         }
       ]
     }

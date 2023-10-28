@@ -1,6 +1,6 @@
+![](https://repo.roinz.xyz/api/badge/latest/snapshots/xyz/yellowstrawberry/Commander)
 # Commander
 > Makes Minecraft command more developer-friendly.
-
 
 ## Use
 > [!WARNING]
