@@ -10,7 +10,10 @@ You can implement this library with
 #### Gradle
 ```groovy
 repositories {
-    
+    maven {
+        name = "roinSnapshots"
+        url = uri("https://repo.roinz.xyz/snapshots")
+    }
 }
 
 dependencies {
