@@ -1,6 +1,7 @@
-![](https://repo.roinz.xyz/api/badge/latest/snapshots/xyz/yellowstrawberry/Commander)
-# Commander
+# Commander ![](https://repo.roinz.xyz/api/badge/latest/snapshots/xyz/yellowstrawberry/Commander) 
 > Makes Minecraft command more developer-friendly.
+
+<img src="https://yellowstrawberrys.github.io/minecraft-api-badges/dark/paper/1.20.1-PLUS.png" width="400"/><br/>
 
 ## Use
 > [!WARNING]
