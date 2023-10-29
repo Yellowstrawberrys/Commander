@@ -5,7 +5,7 @@
 
 ## Use
 > [!WARNING]
-> This library requires Paper-api 1.20.1+
+> This library only works with Paper & Folia
 
 You can implement this library with
 #### Gradle
