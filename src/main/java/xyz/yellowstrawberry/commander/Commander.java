@@ -5,8 +5,6 @@ import xyz.yellowstrawberry.commander.annotations.Command;
 import xyz.yellowstrawberry.commander.utils.ParameterConverter;
 import xyz.yellowstrawberry.commander.utils.ReturnComputer;
 
-import java.lang.reflect.Method;
-
 public final class Commander {
     private final Plugin plugin;
     public Commander(Plugin plugin) {
@@ -14,11 +12,9 @@ public final class Commander {
     }
 
     public void registerCommands(Object o) {
-        for(Method method : o.getClass().getDeclaredMethods()) {
-            if (method.isAnnotationPresent(Command.class)) {
-                plugin.getServer().getCommandMap().register(plugin.getName(), new CommandHandler(method.getAnnotation(Command.class), o));
-            }
-        }
+        if (o.getClass().isAnnotationPresent(Command.class)) {
+            plugin.getServer().getCommandMap().register(plugin.getName(), new CommandHandler(o.getClass().getAnnotation(Command.class), o));
+        }else throw new IllegalArgumentException(o.getClass().getSimpleName()+" doesn't have Command annotation");
     }
 
     public static void addReturnComputers(Class<?> target, ReturnComputer returnComputer) {

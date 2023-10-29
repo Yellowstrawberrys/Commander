@@ -3,7 +3,7 @@
   "component": {
     "group": "xyz.yellowstrawberry",
     "module": "Commander",
-    "version": "1.0.1-SNAPSHOT",
+    "version": "1.0.2-SNAPSHOT",
     "attributes": {
       "org.gradle.status": "integration"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "Commander-1.0.1-SNAPSHOT.jar",
-          "url": "Commander-1.0.1-SNAPSHOT.jar",
-          "size": 12275,
-          "sha512": "bdf88e770cfe4845740fa5d2738957a9097d83dda11deec52d2242b68794a8d385d71a02e8dcca5f5116d8a3b1385a378c286ae1ea4dd99a472d4e0a92267d48",
-          "sha256": "de0bf30b86661130ff919b29d5422b29fb910b66137575d5cc6b1627a62a6b97",
-          "sha1": "3c587b688cc1a00f14068e37c4ecff6da8d20a40",
-          "md5": "dbdf88ab951834187f1f67d96932818b"
+          "name": "Commander-1.0.2-SNAPSHOT.jar",
+          "url": "Commander-1.0.2-SNAPSHOT.jar",
+          "size": 12440,
+          "sha512": "5c4aa3d97dc7481c71206dea32fbd4fd672f83849b1eff9439b685f252b1f43b12c91bae058eaf5a94baf69824f3624b0cd1ef9e85d7816baf46b400b0e32bc0",
+          "sha256": "b39c71dbb87130bf8e1de9f1e2758e92d0139c3a0a2896ffdd0a934502ab3712",
+          "sha1": "a88f930942972b4cd42ad3ead1d85d36342febf1",
+          "md5": "0fc5c1758a565e3242cbf6f2d8f10ef6"
         }
       ]
     },
@@ -46,13 +46,13 @@
       },
       "files": [
         {
-          "name": "Commander-1.0.1-SNAPSHOT.jar",
-          "url": "Commander-1.0.1-SNAPSHOT.jar",
-          "size": 12275,
-          "sha512": "bdf88e770cfe4845740fa5d2738957a9097d83dda11deec52d2242b68794a8d385d71a02e8dcca5f5116d8a3b1385a378c286ae1ea4dd99a472d4e0a92267d48",
-          "sha256": "de0bf30b86661130ff919b29d5422b29fb910b66137575d5cc6b1627a62a6b97",
-          "sha1": "3c587b688cc1a00f14068e37c4ecff6da8d20a40",
-          "md5": "dbdf88ab951834187f1f67d96932818b"
+          "name": "Commander-1.0.2-SNAPSHOT.jar",
+          "url": "Commander-1.0.2-SNAPSHOT.jar",
+          "size": 12440,
+          "sha512": "5c4aa3d97dc7481c71206dea32fbd4fd672f83849b1eff9439b685f252b1f43b12c91bae058eaf5a94baf69824f3624b0cd1ef9e85d7816baf46b400b0e32bc0",
+          "sha256": "b39c71dbb87130bf8e1de9f1e2758e92d0139c3a0a2896ffdd0a934502ab3712",
+          "sha1": "a88f930942972b4cd42ad3ead1d85d36342febf1",
+          "md5": "0fc5c1758a565e3242cbf6f2d8f10ef6"
         }
       ]
     }

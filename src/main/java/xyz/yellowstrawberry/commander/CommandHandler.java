@@ -105,7 +105,7 @@ public class CommandHandler extends BukkitCommand {
                     return entry.getValue().compute(sender, entry.getKey().cast(l));
                 }
             }
-            sender.sendMessage((String) l);
+            if(!m.getReturnType().equals(Void.class) && l != null) sender.sendMessage((String) l);
         }
         return false;
     }
