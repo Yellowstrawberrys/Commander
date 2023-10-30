@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation "xyz.yellowstrawberry:Commander:1.0.0-SNAPSHOT"
+    implementation "xyz.yellowstrawberry:Commander:1.0.3-SNAPSHOT"
 }
 ```
 
@@ -36,7 +36,7 @@ dependencies {
     <dependency>
         <groupId>xyz.yellowstrawberry</groupId>
         <artifactId>Commander</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.3-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
