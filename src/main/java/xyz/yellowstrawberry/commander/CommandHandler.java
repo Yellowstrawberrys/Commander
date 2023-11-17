@@ -20,6 +20,8 @@ import java.lang.reflect.Method;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CommandHandler extends BukkitCommand {
     private final static Map<Class<?>, ReturnComputer> returnComputers = new HashMap<>();
@@ -47,25 +49,36 @@ public class CommandHandler extends BukkitCommand {
             }else if(method.isAnnotationPresent(SubCommand.class)) {
                 SubCommand subCommand = method.getAnnotation(SubCommand.class);
                 method.setAccessible(true);
-                subcommands.put(subCommand.value(), new SubCommandHandler(subCommand, method, o));
+                Map<Integer, String> map = new HashMap<>();
+                Pattern p = Pattern.compile("\\{\\$(.*)}");
+                String[] v = subCommand.value().split(" ");
+                for(int i=0; i<v.length; i++) {
+                    Matcher m = p.matcher(v[i]);
+                    if(m.matches()) {
+                        map.put(i, m.group());
+                    }
+                }
+                new SubCommandHandler(subCommand, method, o, map);
             }
         }
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
-        for(Method m : listeners.get(CommandEvent.COMMAND)) {
-            try {
-                if(m.getAnnotation(CommandListener.class).target()==CommandTarget.PLAYER && !(sender instanceof Player)) return false;
-                Object l;
-                if(args.length>=1 && subcommands.containsKey(args[0])) {
-                    l = subcommands.get(args[0]).execute(sender, args);
-                }else l = m.invoke(o, CommandHandler.insertParameters(m, sender, args));
-
-                return computeReturn(m, l, sender);
-            } catch (IllegalAccessException | InvocationTargetException e) {
-                throw new RuntimeException(e);
+        try {
+            Object l;
+            if(args.length>=1 && subcommands.containsKey(args[0])) {
+                return computeReturn(subcommands.get(args[0]).getMethod(), subcommands.get(args[0]).execute(sender, args), sender);
+            }else {
+                for (Method m : listeners.get(CommandEvent.COMMAND)) {
+                    if (m.getAnnotation(CommandListener.class).target() == CommandTarget.PLAYER && !(sender instanceof Player))
+                        return false;
+                    else l = m.invoke(o, CommandHandler.insertParameters(m, sender, args));
+                    return computeReturn(m, l, sender);
+                }
             }
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            throw new RuntimeException(e);
         }
         return false;
     }

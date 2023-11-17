@@ -2,27 +2,27 @@
 <metadata modelVersion="1.1.0">
   <groupId>xyz.yellowstrawberry</groupId>
   <artifactId>Commander</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <versioning>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
-    <lastUpdated>20231029053224</lastUpdated>
+    <lastUpdated>20231105172606</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0.2-SNAPSHOT</value>
-        <updated>20231029053224</updated>
+        <value>1.0.3-SNAPSHOT</value>
+        <updated>20231105172606</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>module</extension>
-        <value>1.0.2-SNAPSHOT</value>
-        <updated>20231029053224</updated>
+        <value>1.0.3-SNAPSHOT</value>
+        <updated>20231105172606</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0.2-SNAPSHOT</value>
-        <updated>20231029053224</updated>
+        <value>1.0.3-SNAPSHOT</value>
+        <updated>20231105172606</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

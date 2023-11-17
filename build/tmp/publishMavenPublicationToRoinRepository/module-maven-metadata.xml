@@ -3,12 +3,13 @@
   <groupId>xyz.yellowstrawberry</groupId>
   <artifactId>Commander</artifactId>
   <versioning>
-    <latest>1.0.2-SNAPSHOT</latest>
+    <latest>1.0.3-SNAPSHOT</latest>
     <versions>
       <version>1.0.0-SNAPSHOT</version>
       <version>1.0.1-SNAPSHOT</version>
       <version>1.0.2-SNAPSHOT</version>
+      <version>1.0.3-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20231029060906</lastUpdated>
+    <lastUpdated>20231029061703</lastUpdated>
   </versioning>
 </metadata>
