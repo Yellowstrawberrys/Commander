@@ -54,20 +54,28 @@ public class CommandHandler extends BukkitCommand {
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
-        for(Method m : listeners.get(CommandEvent.COMMAND)) {
+        Object l = null;
+        Class<?> returnType = null;
+        if (args.length >= 1 && subcommands.containsKey(args[0])) {
             try {
-                if(m.getAnnotation(CommandListener.class).target()==CommandTarget.PLAYER && !(sender instanceof Player)) return false;
-                Object l;
-                if(args.length>=1 && subcommands.containsKey(args[0])) {
-                    l = subcommands.get(args[0]).execute(sender, args);
-                }else l = m.invoke(o, CommandHandler.insertParameters(m, sender, args));
-
-                return computeReturn(m, l, sender);
-            } catch (IllegalAccessException | InvocationTargetException e) {
+                l = subcommands.get(args[0]).execute(sender, args);
+                returnType = l!=null?l.getClass():null;
+            } catch (InvocationTargetException | IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
+        }else if(listeners.containsKey(CommandEvent.COMMAND)) {
+            for (Method m : listeners.get(CommandEvent.COMMAND)) {
+                try {
+                    if (m.getAnnotation(CommandListener.class).target() == CommandTarget.PLAYER && !(sender instanceof Player))
+                        return false;
+                    l = m.invoke(o, CommandHandler.insertParameters(m, sender, args));
+                    returnType = l!=null?l.getClass():null;
+                } catch (IllegalAccessException | InvocationTargetException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
-        return false;
+        return l != null && computeReturn(returnType, l, sender);
     }
 
     @Override
@@ -92,12 +100,13 @@ public class CommandHandler extends BukkitCommand {
         }
         return tab;
     }
-    private static boolean computeReturn(Method m, Object l, CommandSender sender) {
-        if(returnComputers.containsKey(m.getReturnType())) {
-            return returnComputers.get(m.getReturnType()).compute(sender, m.getReturnType().cast(l));
-        }else if(m.getReturnType().isAssignableFrom(Component.class)) {
+    private static boolean computeReturn(Class<?> returnType, Object l, CommandSender sender) {
+        if(returnComputers.containsKey(returnType)) {
+            return returnComputers.get(returnType).compute(sender, returnType.cast(l));
+        }else if(Component.class.isAssignableFrom(returnType)) {
             sender.sendMessage((Component) l);
-        }else if(m.getReturnType().equals(Boolean.class)) {
+        }else if(boolean.class.isAssignableFrom(returnType) || Boolean.class.isAssignableFrom(returnType)) {
+            System.out.println(l);
             return (boolean) l;
         }else {
             for(Map.Entry<Class<?>, ReturnComputer> entry : returnComputers.entrySet()) {
@@ -105,7 +114,7 @@ public class CommandHandler extends BukkitCommand {
                     return entry.getValue().compute(sender, entry.getKey().cast(l));
                 }
             }
-            if(!m.getReturnType().equals(Void.class) && l != null) sender.sendMessage((String) l);
+            if(!returnType.equals(Void.class) && l != null) sender.sendMessage((String) l);
         }
         return false;
     }

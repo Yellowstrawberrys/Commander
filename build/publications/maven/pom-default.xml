@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>xyz.yellowstrawberry</groupId>
   <artifactId>Commander</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.4-SNAPSHOT</version>
   <name>Commander</name>
   <description>Makes Minecraft command more developer-friendly.</description>
   <licenses>
